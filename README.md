@@ -1,12 +1,67 @@
-# React + Vite
+# Berries Pokedex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive Pokedex-style application for exploring Pokemon berries, featuring a unique firmness-based filtering system.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interactive vertical slider for filtering berries by firmness level
+- Real-time search functionality with debounce
+- Smooth animations and visual feedback
+- Local storage caching for improved performance
+- Responsive design with modern UI/UX
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- @radix-ui/react-slider
+- PokeAPI
+
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone [your-repo-url]
+   cd berries-pokedex
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+
+## Project Structure
+
+- `/src/components` - React components
+- `/src/hooks` - Custom React hooks
+- `/src/api.js` - API integration with PokeAPI
+- `/src/App.jsx` - Main application component
+- `/src/App.css` - Main styles
+
+## Features Implementation
+
+### Firmness Slider
+- Vertical slider with interactive feedback
+- Color-coded firmness levels
+- Smooth animations and transitions
+
+### Berry Collection
+- Displays berry cards with names and flavors
+- Filters based on firmness level
+- Search functionality with debounce
+
+### Data Management
+- Efficient API calls with caching
+- Local storage for improved performance
+- Error handling and loading states
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
