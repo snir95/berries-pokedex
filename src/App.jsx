@@ -41,7 +41,7 @@ function App() {
         {/* Left Side: The Firmness Slider */}
         <FirmnessSlider 
           selectedFirmness={selectedFirmness}
-          onFirmnessChange={setSelectedFirmness} // Pass the state setter function
+          onFirmnessChange={setSelectedFirmness} 
         />
         
         {/* Right Side: The Search and Berries Collection */}
@@ -50,7 +50,7 @@ function App() {
             type="text"
             placeholder="Search by name..."
             className="search-input"
-            onChange={(e) => setSearchTerm(e.target.value)} // Update search term on every keystroke
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <BerriesCollection berries={filteredBerries} />
         </div>
