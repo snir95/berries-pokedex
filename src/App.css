@@ -1,0 +1,251 @@
+.pokedex-card {
+  display: flex;
+  width: 800px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+}
+
+.firmness-slider {
+  width: 200px;
+  padding: 20px;
+  border-right: 1px solid #eee;
+}
+
+.firmness-slider h2 {
+  font-size: 16px;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.slider-container {
+  position: relative;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 300px;
+}
+
+.firmness-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.firmness-label {
+  font-size: 12px;
+  text-transform: capitalize;
+  transition: color 0.3s, transform 0.3s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.firmness-label.active {
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+/* Radix UI Slider styles */
+.slider-wrapper {
+  position: relative;
+  height: 100%;
+  padding: 10px 0;
+}
+
+.slider-root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  height: 100%;
+  width: 20px;
+}
+
+.slider-hint {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.slider-root:not(:hover) .slider-hint {
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.slider-track {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: relative;
+  flex-grow: 1;
+  border-radius: 9999px;
+  width: 6px;
+}
+
+.slider-range {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 9999px;
+}
+
+.slider-thumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: grab;
+  position: relative;
+}
+
+.slider-thumb::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 16px;
+  background: inherit;
+  filter: blur(8px);
+  opacity: 0.5;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+.slider-thumb:hover::after {
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  opacity: 0.7;
+  filter: blur(12px);
+}
+
+.slider-thumb:focus {
+  outline: none;
+}
+
+.slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(0.95);
+}
+
+.slider-thumb:active::after {
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  opacity: 0.4;
+  filter: blur(6px);
+}
+
+.right-panel {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Loading and Error States */
+.pokedex-card.loading,
+.pokedex-card.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.loading-spinner {
+  color: #666;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loading-spinner::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #666;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.berries-collection {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.berry-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.berry-info {
+  display: flex;
+  align-items: center;
+}
+
+.berry-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.flavor-chip {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin-left: 5px;
+  font-size: 12px;
+}
